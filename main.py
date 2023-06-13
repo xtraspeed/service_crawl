@@ -146,6 +146,8 @@ def main():
     #counter = 0
     for service in services:
         prefix = get_prefix(service)
+        if not os.path.exists('files'):
+            os.makedirs('files')
         f = open(f'files\\{str(prefix)}.json', 'w')
         result = get_actions_resources_conditionKeys(service)
         #print (type(result))
